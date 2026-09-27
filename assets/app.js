@@ -93,3 +93,7 @@ function restartHeroTimer(n){clearInterval(heroTimer);if(n>1)heroTimer=setInterv
 document.addEventListener('click',e=>{const d=e.target.closest('#heroDots button[data-slide]');if(d){goHero(+d.dataset.slide);restartHeroTimer(document.querySelectorAll('.hero-slide').length)}if(e.target.closest('#heroPrev')){goHero(heroIndex-1);restartHeroTimer(document.querySelectorAll('.hero-slide').length)}if(e.target.closest('#heroNext')){goHero(heroIndex+1);restartHeroTimer(document.querySelectorAll('.hero-slide').length)}});
 
 window.addEventListener("DOMContentLoaded",()=>{renderHeroSlider();});
+
+
+function renderSocialLinks(){const host=document.getElementById('siteSocialLinks');if(!host)return;const s=read('ahura_socials',{instagram:'',telegram:'',rubika:'',soroush:''});const items=[['instagram','اینستاگرام','instagram.svg'],['telegram','تلگرام','telegram.svg'],['rubika','روبیکا','rubika.svg'],['soroush','سروش','soroush.png']];host.innerHTML=items.filter(x=>s[x[0]]).map(x=>`<a href="${esc(s[x[0]])}" target="_blank" rel="noopener" aria-label="${x[1]}"><img src="${assetPrefix+x[2]}" alt=""><span>${x[1]}</span></a>`).join('')}
+document.addEventListener('DOMContentLoaded',renderSocialLinks);
