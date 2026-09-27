@@ -107,3 +107,192 @@ body{background-color:#f5f0e5;background-image:linear-gradient(rgba(245,240,229,
 @media(max-width:700px){.reference-header,.reference-header-inner{min-height:430px}.reference-header-inner{width:calc(100% - 22px);display:flex;flex-direction:column;padding-top:15px;gap:12px}.reference-brand{align-self:flex-start}.reference-brand img{width:52px;height:52px}.reference-brand strong{font-size:20px}.reference-header-actions{justify-content:flex-start;width:100%}.reference-header-actions a{font-size:11px;padding:6px 8px}.reference-search{order:3;width:100%;height:42px;margin-top:4px}.reference-nav{order:4;min-height:42px;width:100%;gap:18px;justify-content:space-around;padding:0 8px}.reference-nav a{font-size:11px}.reference-header .reference-language-switcher{right:0;bottom:56px}.reference-footer{padding-top:25px}}
 
 .blog-social-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.blog-social-links a{display:inline-flex;align-items:center;gap:6px;color:#f5ead2;border:1px solid #d8b36a66;border-radius:10px;padding:6px 8px;font-size:11px}.blog-social-links img{width:19px;height:19px;object-fit:contain;background:#fff;border-radius:5px;padding:2px}
+
+/* AHURA REFERENCE LAYOUT — final visual direction based on the supplied blank termeh frame and homepage reference. */
+.reference-header{
+  position:relative!important; width:100%; height:94px; min-height:94px!important; overflow:visible!important;
+  background:#0d1b20!important; color:#fff; border-bottom:1px solid #d8b36a66; z-index:50;
+}
+.reference-header-inner{
+  position:relative!important; width:100%!important; max-width:none!important; height:94px; min-height:94px!important;
+  margin:0!important; padding:0 4.5%!important; display:grid!important;
+  grid-template-columns:1fr auto 1fr!important; align-items:center!important; gap:20px!important;
+}
+.reference-header-frame{position:absolute;left:0;right:0;z-index:1;pointer-events:none;background-image:url('ahura-frame.png');background-repeat:no-repeat;background-size:100% auto;}
+.reference-header-frame-top{top:0;height:24px;background-position:center top;opacity:.95;}
+.reference-header-frame-bottom{bottom:-18px;height:28px;background-position:center bottom;opacity:.9;}
+.reference-header-left,.reference-header-right,.reference-brand,.reference-language-switcher{z-index:5;position:relative;}
+.reference-header-left{display:flex;align-items:center;justify-content:flex-start;gap:16px;direction:ltr;}
+.header-icon-link{position:relative;display:grid;place-items:center;width:34px;height:34px;color:#f2d28c;font-size:25px;line-height:1;border:0;background:transparent;transition:transform .2s ease,color .2s ease;}
+.header-icon-link:hover{color:#fff;transform:translateY(-2px);}
+.header-icon-link .count{position:absolute;top:-3px;right:-5px;min-width:17px;height:17px;font-size:9px;margin:0;background:#c83b46;color:#fff;border-radius:50%;}
+.reference-brand{justify-self:center;display:flex;align-items:center;gap:8px;color:#fff;text-decoration:none;direction:rtl;}
+.reference-brand img{width:48px!important;height:48px!important;object-fit:contain;filter:drop-shadow(0 2px 3px #0008);}
+.reference-brand strong{display:block;color:#f2d28c;font-size:25px;line-height:1.05;white-space:nowrap;}
+.reference-brand small{display:block;color:#fff;font-size:9px;margin-top:3px;white-space:nowrap;}
+.reference-header-right{justify-self:end;display:flex;align-items:center;gap:12px;direction:ltr;}
+.reference-search{position:relative!important;left:auto!important;top:auto!important;grid-column:auto!important;grid-row:auto!important;margin:0!important;width:300px!important;height:38px!important;display:flex!important;border:1px solid #d8b36a88!important;border-radius:24px!important;overflow:hidden!important;background:#ffffff14!important;box-shadow:none!important;}
+.reference-search input{flex:1;min-width:0;border:0;outline:0;padding:0 15px;background:transparent!important;color:#fff!important;font-size:12px;}
+.reference-search input::placeholder{color:#f1eadcaa!important;}
+.reference-search button{width:42px;border:0;background:transparent!important;color:#e8c87e!important;font-size:20px;}
+.header-menu-button{width:38px;height:38px;border:0;background:transparent;color:#f2d28c;font-size:25px;line-height:1;cursor:pointer;}
+.reference-nav{position:absolute!important;right:4.5%;top:calc(100% + 6px);display:none;grid-template-columns:1fr;gap:2px!important;min-width:170px;min-height:0!important;padding:7px!important;background:#0b1b21f5!important;border:1px solid #d8b36a99;border-radius:12px;box-shadow:0 15px 35px #0007;z-index:20;}
+.reference-nav.open{display:grid!important;}
+.reference-nav a{padding:8px 10px;font-size:12px!important;color:#f5ead2!important;border-radius:8px;}
+.reference-nav a:hover{background:#d8b36a22;color:#f0d28d!important;}
+.reference-header .reference-language-switcher{position:absolute!important;top:50%!important;right:auto!important;left:50%!important;bottom:auto!important;width:auto!important;height:auto!important;transform:translate(-50%,29px);z-index:7;}
+.reference-header .reference-language-trigger{width:auto!important;height:auto!important;padding:2px 5px!important;border:0!important;background:transparent!important;color:#f5ead2!important;box-shadow:none!important;font-size:9px!important;}
+.reference-header .reference-language-trigger .flag-icon{width:17px;height:11px;}
+.reference-header .language-menu{top:calc(100% + 7px)!important;bottom:auto!important;right:0!important;min-width:120px;}
+/* Keep the hero directly under the compact header, like the supplied site reference. */
+main.container{width:100%;max-width:none;margin:0;padding:0;}
+.hero-slider{width:100vw!important;margin:0 0 0 calc(50% - 50vw)!important;border-radius:0!important;min-height:clamp(390px,42vw,650px)!important;height:clamp(390px,42vw,650px)!important;box-shadow:none!important;overflow:hidden;}
+.hero-slide>img{width:100%!important;height:100%!important;object-fit:cover!important;}
+.hero-copy{inset-inline-start:56%!important;max-width:420px!important;}
+.hero h1{font-size:clamp(27px,3vw,42px)!important;}
+.section{width:min(1180px,calc(100% - 32px));margin-inline:auto;}
+#categories{position:relative;z-index:8;margin-top:-82px;padding-top:0;}
+#categories .section-head{display:none;}
+.category-grid{grid-template-columns:repeat(5,1fr)!important;gap:18px!important;}
+.category-card{min-height:180px;padding:0!important;border:0!important;border-radius:18px!important;overflow:hidden;background:#fff8!important;position:relative;box-shadow:0 12px 30px #39271424!important;display:flex;flex-direction:column;justify-content:flex-end;}
+.category-card .category-icon{width:100%!important;height:120px!important;margin:0!important;border:0!important;border-radius:0!important;background:#eadfc9!important;overflow:hidden;}
+.category-card .category-icon img{width:100%;height:100%;object-fit:cover;}
+.category-card strong{display:block;padding:12px 8px 15px;background:#fffdf8;color:#173a30!important;font-size:15px;}
+/* Footer: use the same supplied frame as a decorative lower border; all wording remains real HTML. */
+.reference-footer{position:relative!important;margin-top:52px!important;padding:48px 0 0!important;background:#0b1820!important;color:#f5ead2;overflow:visible!important;}
+.reference-footer:before{content:"";position:absolute;left:0;right:0;top:0;height:34px;background:url('ahura-frame.png') center top/100% auto no-repeat;opacity:.9;pointer-events:none;}
+.footer-clean{background:#0b1820e8!important;border:0!important;backdrop-filter:none!important;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:26px;width:min(1180px,calc(100% - 32px));margin:auto;padding:24px 0 30px;}
+.footer-clean>div{display:flex;flex-direction:column;gap:5px;}
+.footer-clean h3{margin:0 0 6px;color:#e7c477;font-size:14px;}
+.footer-clean a,.footer-clean p{font-size:11px;color:#eadfca;margin:0;}
+.footer-brand{display:flex;align-items:center;gap:8px;}
+.footer-brand img{width:48px;height:48px;object-fit:contain;}
+.footer-brand strong{font-size:20px;color:#f0cf86;display:block;}
+.footer-brand small{font-size:9px;display:block;color:#fff;}
+.reference-footer .gold-line{position:relative;background:#0b1820!important;color:#d8c59d!important;border-top:1px solid #d8b36a55;padding:10px;font-size:10px;}
+@media(max-width:900px){
+ .reference-header,.reference-header-inner{height:86px;min-height:86px!important;}
+ .reference-header-inner{padding:0 3%!important;grid-template-columns:auto 1fr auto!important;gap:8px!important;}
+ .reference-brand{grid-column:2;}
+ .reference-brand img{width:42px!important;height:42px!important;}.reference-brand strong{font-size:21px;}.reference-brand small{font-size:8px;}
+ .reference-search{width:180px!important;height:34px!important;}.header-menu-button{font-size:22px;width:32px;}
+ .reference-header-left{gap:5px;}.header-icon-link{width:29px;height:29px;font-size:21px;}
+ #categories{margin-top:-62px;}.category-grid{grid-template-columns:repeat(3,1fr)!important;gap:12px!important;}
+ .category-card{min-height:155px;}.category-card .category-icon{height:100px!important;}
+ .footer-clean{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:600px){
+ .reference-header,.reference-header-inner{height:72px;min-height:72px!important;}
+ .reference-header-frame-top{height:14px;}.reference-header-frame-bottom{height:18px;bottom:-10px;}
+ .reference-header-inner{padding:0 10px!important;grid-template-columns:auto 1fr auto!important;}
+ .reference-header-left{gap:1px;}.header-icon-link{width:27px;height:27px;font-size:18px;}.header-icon-link .count{min-width:14px;height:14px;font-size:8px;top:-2px;right:-3px;}
+ .reference-brand{gap:4px;}.reference-brand img{width:34px!important;height:34px!important;}.reference-brand strong{font-size:17px;}.reference-brand small{display:none;}
+ .reference-search{width:110px!important;height:30px!important;}.reference-search input{font-size:9px;padding:0 8px;}.reference-search button{width:30px;font-size:16px;}
+ .header-menu-button{width:27px;height:30px;font-size:18px;}.reference-header-right{gap:3px;}
+ .reference-header .reference-language-switcher{transform:translate(-50%,23px);}.reference-header .reference-language-trigger span:not(.language-chevron){display:none;}
+ .hero-slider{min-height:310px!important;height:310px!important;}.hero-copy{inset-inline-start:52%!important;max-width:44%!important;}.hero h1{font-size:22px!important;}.hero p{font-size:11px!important;}
+ .section{width:calc(100% - 20px);}.category-grid{grid-template-columns:repeat(2,1fr)!important;gap:9px!important;}.category-card{min-height:140px;}.category-card .category-icon{height:88px!important;}.category-card strong{font-size:13px;padding:9px 6px 11px;}
+ .reference-footer{margin-top:36px!important;padding-top:38px!important;}.reference-footer:before{height:25px;}.footer-clean{width:calc(100% - 20px);grid-template-columns:1fr 1fr;gap:16px;padding:16px 0 22px;}
+ .footer-clean>div:first-child{grid-column:1/-1;}.footer-clean a,.footer-clean p{font-size:10px;}.footer-clean h3{font-size:12px;}
+}
+
+/* AHURA TERMEH BLUE FIELD — top/bottom decorative bands with a continuous pale-blue patterned field between them. */
+html, body{background:#dceaf2!important;}
+body{
+  background-image:url('termeh-light-bg.webp')!important;
+  background-size:100% auto!important;
+  background-repeat:repeat-y!important;
+  background-position:center top!important;
+  background-attachment:scroll!important;
+}
+
+/* The header keeps the exact compact height of the reference layout. The gold termeh ornament is a visual band, not a thin line. */
+.reference-header{
+  height:94px!important;
+  min-height:94px!important;
+  background:#dceaf2!important;
+  border:0!important;
+  box-shadow:0 2px 12px rgba(31,55,68,.12)!important;
+}
+.reference-header:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background:url('termeh-header-band.png') center top/100% 94px no-repeat;
+}
+.reference-header-frame-top{display:none!important;}
+.reference-header-frame-bottom{display:none!important;}
+.reference-header-inner{height:94px!important;min-height:94px!important;z-index:3!important;}
+
+/* Keep controls readable on the pale-blue textile field. */
+.reference-header-left,.reference-header-right,.reference-brand,.reference-language-switcher{z-index:5!important;}
+.header-icon-link{color:#9a7228!important;text-shadow:0 1px 1px rgba(255,255,255,.35);}
+.header-icon-link:hover{color:#5c4930!important;}
+.reference-brand strong{color:#9a7228!important;text-shadow:0 1px 1px rgba(255,255,255,.4);}
+.reference-brand small{color:#304c5c!important;}
+.reference-search{background:rgba(247,251,253,.82)!important;border-color:#b98b3b!important;box-shadow:0 4px 14px rgba(39,61,72,.12)!important;}
+.reference-search input{color:#294553!important;}
+.reference-search input::placeholder{color:#536c78!important;}
+.reference-search button{color:#9a7228!important;}
+.header-menu-button{color:#9a7228!important;}
+.reference-header .reference-language-trigger{color:#304c5c!important;background:rgba(247,251,253,.35)!important;}
+.reference-nav{background:#e7f0f5f2!important;border-color:#b98b3b99!important;box-shadow:0 12px 30px rgba(39,61,72,.18)!important;}
+.reference-nav a{color:#294553!important;}
+.reference-nav a:hover{background:#b98b3b22!important;color:#8a6628!important;}
+
+/* The page content sits continuously on the same pale-blue termeh field. */
+main.container,.section{background:transparent!important;}
+.hero-slider{box-shadow:0 12px 30px rgba(34,58,70,.16)!important;}
+
+/* Lower termeh band: a full decorative border, not a thin separator. */
+.reference-footer{
+  position:relative!important;
+  margin-top:52px!important;
+  padding:145px 0 0!important;
+  background:#dceaf2!important;
+  color:#294553!important;
+  overflow:visible!important;
+}
+.reference-footer:before{
+  content:"";
+  position:absolute;
+  left:0;right:0;top:0;
+  height:145px;
+  background:url('termeh-footer-band.png') center top/100% 145px no-repeat;
+  opacity:1;
+  pointer-events:none;
+}
+.footer-clean{
+  position:relative!important;
+  z-index:2!important;
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:28px 6% 30px!important;
+  background:rgba(220,234,242,.90)!important;
+  color:#294553!important;
+  border:0!important;
+  border-top:1px solid rgba(185,139,59,.55)!important;
+  border-bottom:1px solid rgba(185,139,59,.55)!important;
+  backdrop-filter:blur(2px);
+}
+.footer-clean h3{color:#956f2b!important;}
+.footer-clean a,.footer-clean p{color:#385866!important;}
+.footer-brand strong{color:#956f2b!important;}
+.footer-brand small{color:#385866!important;}
+.reference-footer .gold-line{background:rgba(220,234,242,.96)!important;color:#506a77!important;border-top:1px solid rgba(185,139,59,.55)!important;}
+
+@media(max-width:900px){
+  .reference-header,.reference-header-inner{height:86px!important;min-height:86px!important;}
+  .reference-header:before{background-size:100% 86px;}
+  .reference-footer{padding-top:120px!important;}
+  .reference-footer:before{height:120px;background-size:100% 120px;}
+}
+@media(max-width:600px){
+  .reference-header,.reference-header-inner{height:72px!important;min-height:72px!important;}
+  .reference-header:before{background-size:auto 72px;background-position:center top;}
+  .reference-footer{padding-top:92px!important;}
+  .reference-footer:before{height:92px;background-size:auto 92px;background-position:center top;}
+}
